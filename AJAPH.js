@@ -1,6 +1,7 @@
 /**
  * @title            AJAPH
  * @desc             This class makes use of Ajax easier.
+ * @version          1.0
  *
  * @author           Pierre-Henry Soria <pierrehs@hotmail.com>
  * @copyright        Pierre-Henry Soria, All Rights Reserved.
@@ -44,7 +45,7 @@ function AJAPH() {
         this.oXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
         (this._sRequestType == "POST") ? this.oXhr.send(this._sParams) : this.oXhr.send(null);
-        
+
         return this;
     };
 
