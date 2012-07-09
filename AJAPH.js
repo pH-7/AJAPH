@@ -15,7 +15,7 @@ function AJAPH() {
     {
         this.oXhr = new XMLHttpRequest;
     } catch(oE)
-{
+    {
         try {
             this.oXhr = new ActiveXObject("Msxml2.XMLHTTP");
         }
