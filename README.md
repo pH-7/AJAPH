@@ -1,34 +1,34 @@
-h1. AJAPH
+# AJAPH
 
-h2. Overview
+#### Overview
 
 This class makes use of Ajax easier.
 
-h2. How to use this
+## How to use this
 
 Please see the small example I did in the example folder.
 You can also do your testing in here.
 
-h2. Example:
+## Example:
 
 * HTML Code:
 
-`<p>The User:</p>
-<div id="data"></div>`
+        <p>The User:</p>
+        <div id="data"></div>
 
 * JS Code:
 
-`var oAjax = new AJAPH;
-oAjax.send("GET", "member_data.pl", "user_id=2939&visible=y", true);
-oAjax.response('text', "data");`
+        var oAjax = new AJAPH;
+        oAjax.send("GET", "member_data.pl", "user_id=2939&visible=y", true);
+        oAjax.response('text', "data");
 
 _Attention, you need JavaScript after the HTML id that must receive the data otherwise it will not work because JavaScript will not find the html ID._
 
-h2. Author
+## Author
 
 Pierre-Henry Soria
 
-h2. License
+## License
 
-[General Public License][http://www.gnu.org/copyleft/gpl.html] (GPL) 3 or later.
+[General Public License](http://www.gnu.org/copyleft/gpl.html) (GPL) 3 or later.
 
