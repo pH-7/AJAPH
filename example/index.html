@@ -11,9 +11,7 @@
 
 <script src="../AJAPH.js"></script>
 <script>
-var oAjax = new AJAPH;
-oAjax.send("GET", "data.txt", null, true);
-oAjax.response('text', "ajax");
+(new AJAPH).send("GET", "data.txt", null, true).response('text', "ajax");
 </script>
 
 </body>
