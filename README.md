@@ -19,7 +19,7 @@ You can also do your testing in here.
 * JS Code:
 
         var oAjax = new AJAPH;
-        oAjax.send("GET", "member_data.pl", "user_id=2939&visible=y", true);
+        oAjax.send("GET", "member_data.pl", "user_id=2939&visible=y");
         oAjax.response('text', "data");
 
 _Attention, you need JavaScript after the HTML id that must receive the data otherwise it will not work because JavaScript will not find the html ID._
