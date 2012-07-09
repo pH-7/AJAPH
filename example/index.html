@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<title>Example for the AJAPH JavaScript Class</title>
+<meta name="description" content="This class makes use of Ajax easier" />
+<meta name="keywords" content="javascript,ajax,class" />
+<body>
+
+<h1>Example AJAPH</h1>
+<div id="ajax"></div>
+
+<script src="../AJAPH.js"></script>
+<script>
+var oAjax = new AJAPH;
+oAjax.send("GET", "data.txt", null, true);
+oAjax.response('text', "ajax");
+</script>
+
+</body>
+</html>
