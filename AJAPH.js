@@ -49,7 +49,7 @@ function AJAPH() {
         return this;
     };
 
-    this.responseHtml = function(sHtmlId) {
+    this.setResponseHtml = function(sHtmlId) {
         this._sResponseType = "text";
 
         this._sContent = document.getElementById(sHtmlId);
@@ -69,17 +69,17 @@ function AJAPH() {
         }
     };
 
-    this.responseText = function() {
+    this.getResponseText = function() {
         this._sResponseType = "text";
         return this._response();
     };
 
-    this.responseXml = function() {
+    this.getResponseXml = function() {
         this._sResponseType = "xml";
         return this._response();
     };
 
-    this.responseJson = function() {
+    this.getResponseJson = function() {
         this._sResponseType = "json";
         return this._response();
     };
