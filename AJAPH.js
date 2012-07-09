@@ -1,8 +1,8 @@
 /**
  * @title            AJAPH
  * @desc             This class makes use of Ajax easier.
+ * @link             http://github.com/pH-7/AJAPH
  * @version          1.0
- *
  * @author           Pierre-Henry Soria <pierrehs@hotmail.com>
  * @copyright        Pierre-Henry Soria, All Rights Reserved.
  * @license          General Public License (GPL) 3 or later (http://www.gnu.org/copyleft/gpl.html)
