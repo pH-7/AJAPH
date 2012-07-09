@@ -2,7 +2,7 @@
  * @title            AJAPH
  * @desc             This class makes use of Ajax easier.
  * @link             http://github.com/pH-7/AJAPH
- * @version          1.0
+ * @version          1.1
  * @author           Pierre-Henry Soria <pierrehs@hotmail.com>
  * @copyright        Pierre-Henry Soria, All Rights Reserved.
  * @license          General Public License (GPL) 3 or later (http://www.gnu.org/copyleft/gpl.html)
@@ -49,34 +49,59 @@ function AJAPH() {
         return this;
     };
 
-    this.response = function(sResponseType, sHtmlId) {
-        this._sResponseType = sResponseType;
+    this.responseHtml = function(sHtmlId) {
+        this._sResponseType = "text";
 
         this._sContent = document.getElementById(sHtmlId);
 
         // Only for asynchronous requests
         if(this._bAsync) {
             this.oXhr.onreadystatechange = function() {
-                if(this.readyState == 4)
-                {
-                    this.oMe._receive();
+                if(this.readyState == 4) {
+                    this.oMe._sContent.innerHTML = this.oMe._receive();
                 } else {
                     this.oMe._sContent.innerHTML = '<img src="data:image/gif;base64,R0lGODlhEAALAPQAAP///wAAANra2tDQ0Orq6gYGBgAAAC4uLoKCgmBgYLq6uiIiIkpKSoqKimRkZL6+viYmJgQEBE5OTubm5tjY2PT09Dg4ONzc3PLy8ra2tqCgoMrKyu7u7gAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA" alt="Loading..." />';
                 }
             }
         } else {
             // It should not be used onreadystatechange for queries syndrome
-            this._receive();
+            this._sContent.innerHTML = this._receive();
+        }
+    };
+
+    this.responseText = function() {
+        this._sResponseType = "text";
+        return this._response();
+    };
+
+    this.responseXml = function() {
+        this._sResponseType = "xml";
+        return this._response();
+    };
+
+    this.responseJson = function() {
+        this._sResponseType = "json";
+        return this._response();
+    };
+
+    this._response = function() {
+        // Only for asynchronous requests
+        if(this._bAsync) {
+            this.oXhr.onreadystatechange = function() {
+                if(this.readyState == 4) {
+                    return this.oMe._receive();
+                }
+            }
+        } else {
+            // It should not be used onreadystatechange for queries syndrome
+            return this._receive();
         }
     };
 
     this._receive = function() {
-        if(this.oXhr.status == 200)
-        {
-            this._sContent.innerHTML = this._getResponseType();
-        }
-        else
-        {
+        if(this.oXhr.status == 200) {
+            return this._getResponseType();
+        } else {
             alert('Error HTTP status code: ' + this.oXhr.status + ' ' + this.oXhr.statusText);
         }
     };
