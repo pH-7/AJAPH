@@ -1,6 +1,6 @@
 # AJAPH
 
-#### Overview
+## Overview
 
 This class makes use of Ajax easier.
 
