@@ -1,9 +1,11 @@
 h1. AJAPH
 
 h2. Overview
+
 This class makes use of Ajax easier.
 
 h2. How to use this
+
 Please see the small example I did in the example folder.
 You can also do your testing in here.
 
@@ -23,8 +25,10 @@ oAjax.response('text', "data");`
 _Attention, you need JavaScript after the HTML id that must receive the data otherwise it will not work because JavaScript will not find the html ID._
 
 h2. Author
+
 Pierre-Henry Soria
 
 h2. License
+
 [General Public License][http://www.gnu.org/copyleft/gpl.html] (GPL) 3 or later.
 
