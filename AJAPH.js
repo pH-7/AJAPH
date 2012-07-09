@@ -44,6 +44,8 @@ function AJAPH() {
         this.oXhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 
         (this._sRequestType == "POST") ? this.oXhr.send(this._sParams) : this.oXhr.send(null);
+        
+        return this;
     };
 
     this.response = function(sResponseType, sHtmlId) {
