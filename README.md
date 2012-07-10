@@ -61,5 +61,3 @@ Pierre-Henry Soria
 
 h2. License
 [General Public License][http://www.gnu.org/copyleft/gpl.html] (GPL) 3 or later.
-
->>>>>>> 33b1fa61800c62228158ab519722ec9a000f8bb8
