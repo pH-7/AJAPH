@@ -2,7 +2,7 @@
 
 ## Overview
 
-This class makes use of Ajax easier.
+This class makes use of Ajax easier. It allows you to make *asynchronous* (default) or *synchronous* request.
 
 ## How to use this
 
@@ -18,8 +18,14 @@ You can also do your testing in here.
 
 * JS Code:
 
+        // Create object
         var oAjax = new AJAPH;
-        oAjax.send("GET", "member_data.pl", "user_id=2939&visible=y").setResponseHtml("data");
+        
+        // GET method
+        oAjax.send("GET", "member_search.pl", "sex=m&active=1&age=18").setResponseHtml("data");
+        
+        // POST method
+        oAjax.send("POST", "member_data.pl", "user_id=2939&visible=y").setResponseHtml("data");
 
 _Attention, you need JavaScript after the HTML id that must receive the data otherwise it will not work because JavaScript will not find the html ID._
 

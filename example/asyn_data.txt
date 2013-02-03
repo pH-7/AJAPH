@@ -1,0 +1,1 @@
+This text was recovered by an <b>Asynchronous</b> request using the class AJAPH

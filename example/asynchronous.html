@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<title>Example for the AJAPH JavaScript Class - Asynchronous</title>
+<meta name="description" content="This class makes use of Ajax easier" />
+<meta name="keywords" content="javascript,ajax,class" />
+<body>
+
+<h1>Example AJAPH - Asynchronous</h1>
+<div id="ajax"></div>
+
+<script src="../AJAPH.js"></script>
+<script>
+(new AJAPH).send("GET", "asyn_data.txt", null, true).setLoadImage("loading.gif").getLoadImage("ajax").setResponseHtml("ajax");
+</script>
+
+</body>
+</html>
