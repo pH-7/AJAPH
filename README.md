@@ -9,11 +9,11 @@ This class makes use of Ajax easier. It allows you to make *asynchronous* (defau
 Please see the small example I did in the example folder.
 You can also do your testing in here.
 
-## Example:
+## Example
 
 * HTML Code:
 
-        <p>The User:</p>
+        <h1>The Member(s):</h1>
         <div id="data"></div>
 
 * JS Code:
